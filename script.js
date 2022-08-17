@@ -8,7 +8,9 @@ let birdBottom;
 Crea una función aleatorio() que tenga dos parámetros: min y max. 
 La función debe DEVOLVER (return) un valor aleatorio entre los valores de min y max.
 */
-
+function aleatorio(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 /* Ejercicio 2.
 Crea una función dibujarBird(). Al llamar a la función:
@@ -16,19 +18,25 @@ Crea una función dibujarBird(). Al llamar a la función:
 - El valor de la propiedad bottom de bird debe ser el nuevo valor de birdBottom + 'px'
 - El valor de la propiedad left de bird debe ser '250px'
 */
-
+function dibujarBird(){
+    birdBottom = aleatorio(10, 570)
+    bird.style.bottom = birdBottom + 'px'
+    bird.style.left = '250px'
+}
 
 /* Ejercicio 3.
 Crea una función iniciar(). Al llamar a la función iniciar():
 - Se debe de llamar a la función dibujarBird()
 */
-
+function iniciar(){
+    dibujarBird()
+}
 
 
 /* Ejercicio 4. 
 Llama a la función iniciar()
 */
-
+iniciar()
 
 
 // Parar el setInterval que llama a la función loop cada 2 segundos
